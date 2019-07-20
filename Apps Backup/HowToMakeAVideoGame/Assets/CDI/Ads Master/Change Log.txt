@@ -1,0 +1,46 @@
+* Version 2.1.5
+- Adding show ads by random mode
+- Fix show banner issue
+
+* Version 2.1.4
+- New methods to show banner
+
+* Version 2.1.3 p1
+- Improve Editor
+
+* Version 2.1.3
+- Check sdk available icons
+- Disable sdk automatically if it's not available
+
+* Version 2.1.2
+- Don't load ads unit if provider is not into profiles.
+- Zero TimeScale option for interstitial & rewarded video
+- Bugs fixes
+
+* Version 2.1.1
+- Facebook Banner support
+- Fixed bug don't show bottom banner for admob
+- Delay interstitial for First Open 
+- Fix errors on Editor
+- Improve Editor
+
+* Version 2.0.4
+- Fb native ad time limit reloads
+
+* Version 2.0.3
+- Fix some bugs related banner view
+
+* Version 2.0.2
+- Improve Editor
+- Not require name banner to show
+
+* Version 2.0.1
+- Show interstitial by name
+- Remote config
+
+* Version 1.3.2
+- Change the way to show banner Admob
+- Facebook native ad - resolution
+
+* Version 1.3.1
+- Add more banner size

@@ -1,0 +1,91 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.EventSystems;
+
+public class GameControl : MonoBehaviour
+{
+    public bool gameOver = false;
+    public static GameControl instance;
+    public Text scoreText;
+    public GameObject gameOverText;
+
+    private int NumofTapBox = 1;
+    public GameObject TapBoxPrefab;
+    private GameObject[] newTapBox;
+    private Text newText;
+
+    public RectTransform canvas;
+
+    private int score = 0;
+
+    private float timeSinceLastSpawned;
+    private float delay = 0.5f;
+
+    private int TapBoxValue;
+    public Text TapBoxText;
+    private Vector3 spawnPosition;
+    int i;
+
+    void Awake()
+    {
+        //If we don't currently have a game control...
+        if (instance == null)
+            //...set this one to be it...
+            instance = this;
+        //...otherwise...
+        else if (instance != this)
+            //...destroy this one because it is a duplicate.
+            Destroy(gameObject);
+    }
+
+    void Update()
+    {
+        timeSinceLastSpawned += Time.deltaTime;
+        if (gameOver == false && timeSinceLastSpawned > 4)
+        {
+            timeSinceLastSpawned = 0;
+            Invoke("CreateTapBox", delay);
+        }
+    }
+
+    /* public void CreateTapBox()
+ {
+
+     newTapBox = new GameObject[NumofTapBox];
+     for (i = 0; i < newTapBox.Length; i++)
+     {
+         spawnPosition = new Vector3((Random.Range(canvas.offsetMin.x, canvas.offsetMax.x)), (1.05f * canvas.offsetMax.y), 0);
+         BoxOriginalValue();
+         newTapBox[m] = Instantiate(TapBoxPrefab, canvas);
+         newTapBox[m].transform.position = spawnPosition;
+     }
+ }*/
+
+    public void Score()
+    {
+        if (gameOver)
+        {
+            return;
+        }
+        score++; 
+        scoreText.text = score.ToString();
+    }
+
+    public void SpritePassed()
+    {
+        gameOverText.SetActive(true);
+        gameOver = true;
+    }
+
+    public void BoxOriginalValue()
+    {
+        TapBoxValue = Random.Range(1, 100);
+        TapBoxText.text = TapBoxValue.ToString();
+    }
+
+    public void StartTapBox()
+    {
+        GetComponentInParent<Canvas>().
+    }
+}

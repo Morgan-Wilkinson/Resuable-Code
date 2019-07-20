@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8f9a18bf159f0c04c8eaa96b0e70be48
+timeCreated: 1516317293
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SPQR Italic
+  fontNames:
+  - SPQR Italic
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

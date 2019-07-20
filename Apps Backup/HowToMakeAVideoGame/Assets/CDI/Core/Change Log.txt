@@ -1,0 +1,6 @@
+* Version 2.0.6
+- Refactor
+* Version 2.0.5
+- Add Enum Extensions
+* Version 2.0.4
+Init

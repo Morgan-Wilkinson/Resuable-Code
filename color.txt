@@ -1,0 +1,58 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+
+public class GameControl : MonoBehaviour
+{
+    /*Canvas*/
+    public RectTransform canvas;
+
+    /*Color*/
+    private Renderer rend;
+    
+
+    /*TapBox Button*/
+    public GameObject[] TapBox;
+
+    /*DelayTapBox*/
+    private int tapBoxCounter;
+    private int tapBoxIndex = 0;
+    private float TimeSinceLast;
+
+    
+    void Start ()
+    {
+        
+    }
+    void Update()
+    {
+        //Delay this. Add a random positioning script.
+        TimeSinceLast += Time.deltaTime;
+        if (TimeSinceLast > 4)
+        {
+            TimeSinceLast = 0;
+            StartCoroutine(DelayTapBox());
+        }
+    }
+
+    IEnumerator DelayTapBox()
+    {
+        if (TapBox.Length != 0 && TapBox[tapBoxIndex] != null)
+        {            
+            tapBoxIndex++;
+            if (tapBoxIndex >= 1)
+            {
+               tapBoxIndex = 0;
+               GameObject currentTapBox = (GameObject)Instantiate(TapBox[tapBoxIndex], canvas);
+               currentTapBox.name = string.Format("{0}", tapBoxCounter);
+                //NewTapBoxValue[tapBoxIndex] = TapBoxValue;
+                //Renderer rend = GetComponent<Renderer>();
+               // rend.material.SetColor(currentTapBox.name, Color.red);
+               currentTapBox.GetComponent<Image>().color = new Color32 (255, 255, 225, 100);
+                //creat a switch function that on its press it will cycle through colors;
+            }            
+            tapBoxCounter++;
+            yield return new WaitForSeconds(5);
+        }
+    }
+}
